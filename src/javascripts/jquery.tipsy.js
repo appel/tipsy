@@ -1,7 +1,7 @@
 (function($) {
     $.fn.tipsy = function(opts) {
 
-        opts = $.extend({fade: false, gravity: 'n'}, opts || {});
+        opts = $.extend({fade: false, gravity: 'n', timeout: 100}, opts || {});
         var tip = null, cancelHide = false;
 
         this.hover(function() {
@@ -52,7 +52,7 @@
                 } else {
                     tip.remove();
                 }
-            }, 100);
+            }, opts.timeout);
             
         });
 
